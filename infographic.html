@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: The Academic Impact of Prof. Dr. Muhammad Riaz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F2F2F2;
+            color: #003F5C;
+        }
+        .nav-active {
+            color: #8D5A4B; /* Using the active color from the other file for consistency */
+            font-weight: 600;
+            border-bottom: 2px solid #8D5A4B;
+        }
+        .nav-link {
+            transition: color 0.3s, border-color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #366E8A;
+            border: 4px solid #F2F2F2;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 py-8 md:py-16">
+
+        <header id="shared-navbar" class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+            <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <h1 class="text-xl font-bold text-[#3D405B]">Prof. Dr. Muhammad Riaz</h1>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-[#8D5A4B]">Interactive Profile</a>
+                    <a href="infographic.html" class="nav-link text-gray-600 hover:text-[#8D5A4B]">Infographic</a>
+                </div>
+                <button id="mobile-menu-button-shared" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </nav>
+            <div id="mobile-menu-shared" class="hidden md:hidden bg-white/90 backdrop-blur-sm">
+                <a href="index.html" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Interactive Profile</a>
+                <a href="infographic.html" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Infographic</a>
+            </div>
+        </header>
+
+        <header class="text-center mb-16 pt-16 -mt-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#003F5C] leading-tight">THE ACADEMIC IMPACT</h1>
+            <h2 class="text-2xl md:text-4xl font-semibold text-[#366E8A]">Prof. Dr. Muhammad Riaz</h2>
+            <p class="max-w-3xl mx-auto mt-4 text-[#6B9DB3]">A visual deep dive into a career defined by prolific research, dedicated mentorship, and global recognition in Mathematics and Computational Intelligence.</p>
+        </header>
+
+        <section id="kpis" class="mb-20">
+            <h3 class="text-2xl font-bold text-center mb-8 text-[#003F5C]">Career at a Glance</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-4xl md:text-5xl font-extrabold text-[#003F5C]">27+</p>
+                    <p class="text-sm font-medium text-[#6B9DB3] mt-2">Years of Experience</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-4xl md:text-5xl font-extrabold text-[#003F5C]">192+</p>
+                    <p class="text-sm font-medium text-[#6B9DB3] mt-2">Research Papers</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-4xl md:text-5xl font-extrabold text-[#003F5C]">6,144</p>
+                    <p class="text-sm font-medium text-[#6B9DB3] mt-2">Total Citations</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-4xl md:text-5xl font-extrabold text-[#003F5C]">43</p>
+                    <p class="text-sm font-medium text-[#6B9DB3] mt-2">Postgraduates Supervised</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="mb-20">
+            <h3 class="text-2xl font-bold text-center mb-8 text-[#003F5C]">The Ascent: A Career Timeline</h3>
+            <p class="max-w-3xl mx-auto text-center text-[#6B9DB3] mb-12">From his early roles as a Lecturer to his current position as a full Professor, this timeline traces a path of steady growth, increasing responsibility, and profound institutional commitment.</p>
+            <div class="relative max-w-2xl mx-auto border-l-4 border-[#A5CAD7] pl-8 py-4">
+                <div class="mb-10 relative timeline-item">
+                    <p class="font-bold text-[#003F5C]">1997 - 2004</p>
+                    <p class="text-[#366E8A]">Lecturer in Mathematics</p>
+                    <p class="text-sm text-[#6B9DB3]">Held positions at various government colleges, building foundational teaching experience and taking on early administrative roles.</p>
+                </div>
+                <div class="mb-10 relative timeline-item">
+                    <p class="font-bold text-[#003F5C]">2004 - 2022</p>
+                    <p class="text-[#366E8A]">Assistant Professor</p>
+                    <p class="text-sm text-[#6B9DB3]">Joined the University of the Punjab, becoming deeply involved in coordinating academic programs and numerous departmental committees.</p>
+                </div>
+                <div class="mb-10 relative timeline-item">
+                    <p class="font-bold text-[#003F5C]">2022 - 2023</p>
+                    <p class="text-[#366E8A]">Associate Professor</p>
+                    <p class="text-sm text-[#6B9DB3]">A promotion recognizing nearly two decades of consistent performance and growing academic stature at the university.</p>
+                </div>
+                <div class="relative timeline-item">
+                    <p class="font-bold text-[#003F5C]">2023 - Present</p>
+                    <p class="text-[#366E8A]">Professor of Mathematics</p>
+                    <p class="text-sm text-[#6B9DB3]">Achieved the highest academic rank, leading doctoral programs and serving as a key figure in the university's research and innovation efforts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="research-impact" class="mb-20">
+            <h3 class="text-2xl font-bold text-center mb-8 text-[#003F5C]">A Surge of Influence</h3>
+            <p class="max-w-3xl mx-auto text-center text-[#6B9DB3] mb-12">Professor Riaz's research impact has seen an extraordinary acceleration. The vast majority of his 6,144 citations have been accumulated since 2020, demonstrating a sharp increase in his global influence within his specialized fields.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-3 bg-white p-6 rounded-lg shadow-lg">
+                     <h4 class="text-lg font-bold text-center mb-1 text-[#003F5C]">Explosive Citation Growth</h4>
+                     <p class="text-sm text-center text-[#6B9DB3] mb-4">This chart shows the dramatic increase in citations per period against the steady rise of his cumulative scholarly impact.</p>
+                    <div class="chart-container">
+                        <canvas id="citationsChart"></canvas>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-lg flex flex-col justify-center">
+                    <h4 class="text-lg font-bold text-center mb-1 text-[#003F5C]">Primary Research Themes</h4>
+                    <p class="text-sm text-center text-[#6B9DB3] mb-4">His work is strategically focused on high-impact areas with significant practical applications.</p>
+                    <div class="chart-container" style="height:250px; max-height:300px;">
+                        <canvas id="researchFocusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mentorship" class="mb-20">
+            <h3 class="text-2xl font-bold text-center mb-8 text-[#003F5C]">Shaping the Future: A Legacy of Mentorship</h3>
+            <p class="max-w-3xl mx-auto text-center text-[#6B9DB3] mb-12">As an HEC Approved Supervisor, Prof. Riaz has created a multiplier effect, passing his expertise to a new generation and building a specialized research group around cutting-edge topics in mathematics.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <p class="text-6xl mb-2">🎓</p>
+                    <p class="text-5xl font-extrabold text-[#003F5C]">8</p>
+                    <p class="text-xl font-semibold text-[#366E8A]">Ph.D. Students Supervised</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <p class="text-6xl mb-2">📜</p>
+                    <p class="text-5xl font-extrabold text-[#003F5C]">35</p>
+                    <p class="text-xl font-semibold text-[#366E8A]">M.Phil. Students Supervised</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="recognition">
+            <h3 class="text-2xl font-bold text-center mb-8 text-[#003F5C]">Global & Institutional Recognition</h3>
+            <p class="max-w-3xl mx-auto text-center text-[#6B9DB3] mb-12">His high-impact work is affirmed by consistent inclusion in Stanford University's list of the world's top 2% of scientists, alongside numerous performance and research awards from his home institution.</p>
+            <div class="bg-white p-8 rounded-lg shadow-xl border-t-8 border-[#003F5C]">
+                <div class="text-center">
+                    <p class="text-2xl font-bold text-[#003F5C]">Stanford University's World's Top 2% Researcher</p>
+                    <p class="text-[#366E8A] mt-2">A prestigious honor recognizing elite global scientists with high-impact research, awarded for four consecutive years.</p>
+                    <div class="flex justify-center items-center space-x-4 mt-6">
+                        <span class="bg-[#A5CAD7] text-[#003F5C] font-bold py-2 px-4 rounded-full">2021</span>
+                        <span class="bg-[#A5CAD7] text-[#003F5C] font-bold py-2 px-4 rounded-full">2022</span>
+                        <span class="bg-[#A5CAD7] text-[#003F5C] font-bold py-2 px-4 rounded-full">2023</span>
+                        <span class="bg-[#A5CAD7] text-[#003F5C] font-bold py-2 px-4 rounded-full">2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer id="shared-footer" class="bg-white mt-16 py-6 border-t">
+        <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>&copy; Dr Muhammad Riaz. All rights reserved.</p>
+            <p>Website developed and maintained by Aria Webworks, Finland (<a href="https://ariawebworks.com" class="text-blue-600 hover:underline" target="_blank">URL: https://ariawebworks.com</a>)</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const wrapLabel = (label) => {
+                if (label.length <= 16) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+            
+            const citationLabels = ['Pre-2020', '2020', '2021', '2022', '2023', '2024'];
+            const citationData = [971, 1500, 1500, 1500, 673, 673]; 
+            const cumulativeData = [971, 2471, 3971, 5471, 6144, 6144];
+
+            const citationsCtx = document.getElementById('citationsChart').getContext('2d');
+            new Chart(citationsCtx, {
+                data: {
+                    labels: citationLabels,
+                    datasets: [{
+                        type: 'bar',
+                        label: 'Citations per Period',
+                        data: citationData,
+                        backgroundColor: 'rgba(107, 157, 179, 0.6)', 
+                        borderColor: '#6B9DB3',
+                        borderWidth: 2,
+                        yAxisID: 'y',
+                    }, {
+                        type: 'line',
+                        label: 'Cumulative Citations',
+                        data: cumulativeData,
+                        borderColor: '#003F5C',
+                        backgroundColor: 'rgba(0, 63, 92, 0.2)',
+                        fill: true,
+                        tension: 0.3,
+                        yAxisID: 'y1',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { grid: { display: false } },
+                        y: { 
+                            position: 'left',
+                            title: { display: true, text: 'Citations per Period' }
+                        },
+                        y1: {
+                            position: 'right',
+                            title: { display: true, text: 'Cumulative Citations' },
+                            grid: { drawOnChartArea: false }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            callbacks: { title: tooltipTitleCallback }
+                        },
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+
+            const researchFocusCtx = document.getElementById('researchFocusChart').getContext('2d');
+            const researchLabels = ['Decision Making', 'Fuzzy Sets', 'Aggregation Operators', 'Topology', 'Other'].map(wrapLabel);
+            new Chart(researchFocusCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: researchLabels,
+                    datasets: [{
+                        label: 'Research Focus Areas',
+                        data: [70, 57, 41, 25, 15],
+                        backgroundColor: [
+                            '#003F5C',
+                            '#366E8A',
+                            '#6B9DB3',
+                            '#A5CAD7',
+                            '#CCCCCC'
+                        ],
+                        borderColor: '#F2F2F2',
+                        borderWidth: 3,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                boxWidth: 15,
+                                padding: 15
+                            }
+                        },
+                        tooltip: {
+                            callbacks: { title: tooltipTitleCallback }
+                        }
+                    }
+                }
+            });
+
+            // Shared navigation setup
+            const mobileMenuButtonShared = document.getElementById('mobile-menu-button-shared');
+            const mobileMenuShared = document.getElementById('mobile-menu-shared');
+
+            if (mobileMenuButtonShared && mobileMenuShared) {
+                mobileMenuButtonShared.addEventListener('click', () => {
+                    mobileMenuShared.classList.toggle('hidden');
+                });
+
+                document.querySelectorAll('#mobile-menu-shared a').forEach(link => {
+                    link.addEventListener('click', () => mobileMenuShared.classList.add('hidden'));
+                });
+            }
+
+            // Highlight active link based on current page
+            const currentPath = window.location.pathname.split('/').pop();
+            document.querySelectorAll('#shared-navbar .nav-link, #mobile-menu-shared a').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('nav-active');
+                } else {
+                    link.classList.remove('nav-active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

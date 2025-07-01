@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Profile: Prof. Dr. Muhammad Riaz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #3D405B;
+        }
+        .nav-active {
+            color: #8D5A4B;
+            font-weight: 600;
+            border-bottom: 2px solid #8D5A4B;
+        }
+        .nav-link {
+            transition: color 0.3s, border-color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+            }
+        }
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.2);
+            background-color: #8D5A4B;
+        }
+        .timeline-item:hover .timeline-content {
+            border-color: #8D5A4B;
+        }
+        .stat-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div id="root" class="min-h-screen">
+        
+        <header id="shared-navbar" class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+            <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <h1 class="text-xl font-bold text-[#3D405B]">Prof. Dr. Muhammad Riaz</h1>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-[#8D5A4B]">Interactive Profile</a>
+                    <a href="infographic.html" class="nav-link text-gray-600 hover:text-[#8D5A4B]">Infographic</a>
+                    <a href="#overview" class="nav-link text-gray-600 hover:text-[#8D5A4B]">Overview</a>
+                    <a href="#career" class="nav-link text-gray-600 hover:text-[#8D5A4B]">Career Journey</a>
+                    <a href="#research" class="nav-link text-gray-600 hover:text-[#8D5A4B]">Research Impact</a>
+                    <a href="#mentorship" class="nav-link text-gray-600 hover:text-[#8D5A4B]">Mentorship</a>
+                    <a href="#recognition" class="nav-link text-gray-600 hover:text-[#8D5A4B]">Recognition</a>
+                </div>
+                <button id="mobile-menu-button-shared" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </nav>
+            <div id="mobile-menu-shared" class="hidden md:hidden bg-white/90 backdrop-blur-sm">
+                <a href="index.html" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Interactive Profile</a>
+                <a href="infographic.html" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Infographic</a>
+                <a href="#overview" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Overview</a>
+                <a href="#career" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Career Journey</a>
+                <a href="#research" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Research Impact</a>
+                <a href="#mentorship" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Mentorship</a>
+                <a href="#recognition" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Recognition</a>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-6 py-8">
+            
+            <section id="overview" class="pt-16 -mt-16 mb-16 text-center">
+                 <h2 class="text-3xl font-bold mb-4 text-[#3D405B]">A Distinguished Academic Leader</h2>
+                 <p class="max-w-3xl mx-auto text-gray-600 mb-8">
+                     This interactive profile provides a detailed examination of the professional and academic contributions of Prof. Dr. Muhammad Riaz of the University of the Punjab. It explores his journey as an educator, his prolific and high-impact research in Mathematics and Computational Intelligence, his role in mentoring the next generation of scholars, and the numerous accolades that recognize his global influence.
+                 </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <div class="bg-white p-6 rounded-xl shadow-md stat-card">
+                        <p class="text-3xl font-bold text-[#8D5A4B]" data-target="27">0</p>
+                        <p class="text-gray-500 mt-2">Years of Experience</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md stat-card">
+                        <p class="text-3xl font-bold text-[#8D5A4B]" data-target="192">0</p>
+                        <p class="text-gray-500 mt-2">Research Papers</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md stat-card">
+                        <p class="text-3xl font-bold text-[#8D5A4B]" data-target="6144">0</p>
+                        <p class="text-gray-500 mt-2">Total Citations</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-md stat-card">
+                        <p class="text-3xl font-bold text-[#8D5A4B]" data-target="43">0</p>
+                        <p class="text-gray-500 mt-2">PhD & M.Phil Students Supervised</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="career" class="pt-20 -mt-16 mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-[#3D405B]">Career Journey</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600 mt-4">
+                        This section traces Prof. Dr. Riaz's steady ascent through academic ranks, from his early roles as a Lecturer to his current position as a full Professor. His journey demonstrates a profound commitment to his institution and a consistent trajectory of increasing responsibility and leadership in teaching, research, and administration.
+                    </p>
+                </div>
+                <div class="relative wrap overflow-hidden p-10 h-full">
+                    <div class="border-2-2 absolute border-opacity-20 border-gray-400 h-full border" style="left: 50%"></div>
+                    <div id="timeline-container" class="space-y-8"></div>
+                </div>
+            </section>
+
+            <section id="research" class="pt-20 -mt-16 mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-[#3D405B]">Pioneering Research & Scholarly Impact</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600 mt-4">
+                        Professor Riaz's research portfolio is exceptionally prolific and impactful, particularly in the fields of Fuzzy Sets, Decision Making, and Computational Intelligence. The visualizations below explore the dramatic growth of his scholarly influence, his key areas of focus, and his most significant publications.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="font-semibold mb-4 text-center">Citation and Publication Growth</h3>
+                        <div class="chart-container">
+                            <canvas id="citationsChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="font-semibold mb-4 text-center">Primary Research Themes</h3>
+                        <div class="chart-container" style="height:350px; max-height:400px;">
+                             <canvas id="researchFocusChart"></canvas>
+                        </div>
+                         <div id="researchFocusLegend" class="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4 text-sm"></div>
+                    </div>
+                </div>
+                <div class="mt-8 bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="font-semibold mb-4 text-center text-xl">Highly Cited Publications</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Publication Title</th>
+                                    <th scope="col" class="px-6 py-3">Journal</th>
+                                    <th scope="col" class="px-6 py-3 text-center">Year</th>
+                                    <th scope="col" class="px-6 py-3 text-center">Citations</th>
+                                </tr>
+                            </thead>
+                            <tbody id="publicationsTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mentorship" class="pt-20 -mt-16 mb-16">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-[#3D405B]">Cultivating Future Scholars</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600 mt-4">
+                        As an HEC Approved Supervisor, Prof. Dr. Riaz has dedicated significant effort to mentoring postgraduate students, creating a multiplier effect where his expertise is passed on to a new generation. This section highlights his extensive supervision record and the thematic focus of his students' research, which closely mirrors his own pioneering work.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center max-w-4xl mx-auto">
+                     <div class="bg-white p-6 rounded-xl shadow-md stat-card">
+                        <p class="text-5xl font-bold text-[#8D5A4B]" data-target="8">0</p>
+                        <p class="text-gray-500 mt-2 font-semibold">PhD Students Supervised</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-md stat-card">
+                        <p class="text-5xl font-bold text-[#8D5A4B]" data-target="35">0</p>
+                        <p class="text-gray-500 mt-2 font-semibold">M.Phil Students Supervised</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-md stat-card">
+                        <p class="text-5xl font-bold text-[#8D5A4B]" data-target="6">0</p>
+                        <p class="text-gray-500 mt-2 font-semibold">Current PhD & M.Phil Students</p>
+                    </div>
+                </div>
+                 <div class="mt-8 bg-white p-6 rounded-xl shadow-lg" x-data="{ open: false, search: '' }">
+                    <div class="flex justify-between items-center cursor-pointer" @click="open = !open">
+                        <h3 class="font-semibold text-xl">Supervised Theses (Click to Expand)</h3>
+                        <span x-text="open ? '−' : '+'" class="text-2xl font-light"></span>
+                    </div>
+                    <div x-cloak x-show="open" x-transition class="mt-4">
+                        <input type="text" x-model="search" placeholder="Search by title, student, or keyword..." class="w-full p-2 mb-4 border border-gray-300 rounded-md">
+                        <div class="overflow-auto max-h-96">
+                            <table class="w-full text-sm text-left text-gray-500">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50 sticky top-0">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-2">Level</th>
+                                        <th scope="col" class="px-4 py-2">Student</th>
+                                        <th scope="col" class="px-4 py-2">Year</th>
+                                        <th scope="col" class="px-4 py-2">Thesis Title</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="thesesTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="recognition" class="pt-20 -mt-16">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-[#3D405B]">Awards & Professional Recognition</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600 mt-4">
+                        His high-impact work is affirmed by consistent inclusion in Stanford University's list of the world's top 2% of scientists, alongside numerous performance and research awards from his home institution.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#8D5A4B]">
+                        <h3 class="font-bold text-lg">Stanford University's Top 2% Researcher</h3>
+                        <p class="text-gray-600 text-sm mt-2">A recurrent affirmation of his high-impact research, placing him among elite global scientists.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">2021</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">2022</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">2023</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">2024</span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#E07A5F]">
+                        <h3 class="font-bold text-lg">Research Incentive Awards</h3>
+                        <p class="text-gray-600 text-sm mt-2">Financial acknowledgment from the University of the Punjab for scholarly excellence.</p>
+                        <ul class="list-disc list-inside mt-4 text-sm text-gray-700">
+                             <li>2020: Rs. 300,000</li>
+                             <li>2019: Rs. 191,667</li>
+                             <li>2012: Rs. 15,000</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#F2CC8F]">
+                        <h3 class="font-bold text-lg">Performance Evaluation Awards</h3>
+                        <p class="text-gray-600 text-sm mt-2">Consistent internal appreciation for overall academic performance.</p>
+                        <p class="text-gray-600 text-xs mt-2">Received annually from 2015 to 2019, with increasing marks and award amounts.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer id="shared-footer" class="bg-white mt-16 py-6 border-t">
+            <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+                <p>&copy; Dr Muhammad Riaz. All rights reserved.</p>
+                <p>Website developed and maintained by Aria Webworks, Finland (<a href="https://ariawebworks.com" class="text-blue-600 hover:underline" target="_blank">URL: https://ariawebworks.com</a>)</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const careerData = [
+            { year: '1997-1998', title: 'Lecturer in Mathematics', institution: 'Govt. Degree College Pindi Bhattian & Kamokee', side: 'left' },
+            { year: '1998-2004', title: 'Lecturer in Mathematics', institution: 'Govt. College of Science, Lahore', details: 'Also served as Assistant Controller of Examinations.', side: 'right' },
+            { year: '2004-2022', title: 'Assistant Professor (BPS-19)', institution: 'University of the Punjab, Lahore', details: 'Extensive coordination and committee roles, including BS/MSc programs, Library, and Examinations.', side: 'left' },
+            { year: '2022-2023', title: 'Associate Professor (BPS-20)', institution: 'University of the Punjab, Lahore', details: 'Continued senior academic and administrative responsibilities.', side: 'right' },
+            { year: '2023-Present', title: 'Professor of Mathematics (BPS-21)', institution: 'University of the Punjab, Lahore', details: 'Leads doctoral program committee, student advising, and serves as Focal Person for ORIC.', side: 'left' },
+        ];
+
+        const publicationsData = [
+            { title: 'Linear Diophantine Fuzzy Set and its Applications towards Multi-Attribute Decision Making Problems', journal: 'Journal of Intelligent & Fuzzy Systems', year: 2019, citations: 425 },
+            { title: 'm-polar Neutrosophic Topology with Applications to Multi-Criteria Decision-Making in Medical Diagnosis and Clustering Analysis', journal: 'International Journal of Fuzzy Systems', year: 2020, citations: 263 },
+            { title: 'Spherical linear Diophantine fuzzy sets with modeling uncertainties in MCDM', journal: 'Computer Modeling in Engineering & Sciences', year: 2021, citations: 136 },
+            { title: 'Pythagorean fuzzy soft MCGDM methods based on TOPSIS, VIKOR and aggregation operators', journal: 'Journal of Intelligent & Fuzzy Systems', year: 2019, citations: 125 },
+            { title: 'A robust q-rung orthopair fuzzy information aggregation using Einstein operations with application to sustainable energy planning decision management', journal: 'Energies', year: 2020, citations: 116 },
+            { title: 'N-soft topology and its applications to multi-criteria group decision making', journal: 'Journal of Intelligent & Fuzzy Systems', year: 2019, citations: 111 },
+        ];
+
+        const thesesData = [
+            { level: 'PhD', student: 'Dr. Syeda Tayyba Tehrim', year: '2020', title: 'Bipolar Fuzzy Soft Topology with Applications in Decision Making' },
+            { level: 'PhD', student: 'Dr. Masooma Raza Hashmi', year: '2020', title: 'Some Hybrid Structures of m-polar Neutrosophic Set with Applications' },
+            { level: 'PhD', student: 'Dr. Khalid Naeem', year: '2020', title: 'Some Contributions to Pythagorean Fuzzy sets and Neutrosophic Sets with Applications' },
+            { level: 'PhD', student: 'Dr. Muzzamil Sitara', year: '2021', title: 'Extensions of Graph Structures Under q-Rung picture Fuzzy Environment' },
+            { level: 'PhD', student: 'Dr. Muhammad Tahir Hamid', year: '2021', title: 'Some Contributions to q-Rung Orthopair m-Polar Fuzzy Sets and Neutrosophic Sets with Applications' },
+            { level: 'PhD', student: 'Hafiz Muhammad Athar Farid', year: '2023', title: 'Some Hybrid Structures of q-Rung Orthopair Fuzzy Sets and their Aggregation Operators with Applications' },
+            { level: 'PhD', student: 'Ayesha Razzaq', year: '2023', title: 'm-Polar Picture Fuzzy Topology with Applications in Multi Criteria Decision Making' },
+            { level: 'PhD', student: 'Nimra Jamil', year: '2023', title: 'Cubic Bipolar Fuzzy Set Topology with Applications in Multi Criteria Decision Making' },
+            { level: 'M.Phil', student: 'Asma Attique', year: '2023', title: 'Some Bipolar Single-Valued Neutrosophic Aggregation Operators with Applications' },
+            { level: 'M.Phil', student: 'Toqeer Jamil', year: '2023', title: 'Cubic Picture Fuzzy Topology with Multi-Criteria Decision-Making' },
+            { level: 'M.Phil', student: 'Yasir Yasin', year: '2023', title: 'Cubic m-Polar fuzzy Information Aggregation with Multi-Criteria Decision-Making' },
+            { level: 'M.Phil', student: 'Shaista Tanveer', year: '2022', title: 'Spherical Fuzzy Soft Topology and Information Aggregation with Applications' },
+            { level: 'M.Phil', student: 'Khadija Akmal', year: '2022', title: 'Cubic m-Polar Fuzzy Topology and Information Measures with Applications' },
+        ];
+
+        function renderTimeline() {
+            const container = document.getElementById('timeline-container');
+            container.innerHTML = careerData.map(item => `
+                <div class="mb-8 flex justify-between ${item.side === 'left' ? 'flex-row-reverse' : ''} items-center w-full">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-600 shadow-xl w-8 h-8 rounded-full timeline-dot transition-all duration-300">
+                        <h1 class="mx-auto font-semibold text-sm text-white">${item.year.split('-')[0]}</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 timeline-content border-2 border-transparent transition-all duration-300">
+                        <h3 class="font-bold text-gray-800 text-lg">${item.title}</h3>
+                        <p class="text-sm leading-snug tracking-wide text-gray-600">${item.institution}</p>
+                        ${item.details ? `<p class="text-xs mt-2 text-gray-500">${item.details}</p>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderPublications() {
+            const tbody = document.getElementById('publicationsTable');
+            tbody.innerHTML = publicationsData.map(pub => `
+                <tr class="bg-white border-b hover:bg-gray-50">
+                    <td class="px-6 py-4 font-medium text-gray-900">${pub.title}</td>
+                    <td class="px-6 py-4">${pub.journal}</td>
+                    <td class="px-6 py-4 text-center">${pub.year}</td>
+                    <td class="px-6 py-4 text-center font-semibold text-[#3D405B]">${pub.citations}</td>
+                </tr>
+            `).join('');
+        }
+
+        function renderTheses() {
+            const tbody = document.getElementById('thesesTableBody');
+            let searchInput = document.querySelector('input[x-model="search"]');
+            
+            const render = () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                const filteredData = thesesData.filter(thesis => 
+                    thesis.title.toLowerCase().includes(searchTerm) ||
+                    thesis.student.toLowerCase().includes(searchTerm) ||
+                    thesis.level.toLowerCase().includes(searchTerm) ||
+                    thesis.year.includes(searchTerm)
+                );
+
+                tbody.innerHTML = filteredData.map(thesis => `
+                    <tr class="bg-white border-b hover:bg-gray-50">
+                        <td class="px-4 py-2">${thesis.level}</td>
+                        <td class="px-4 py-2 font-medium text-gray-700">${thesis.student}</td>
+                        <td class="px-4 py-2">${thesis.year}</td>
+                        <td class="px-4 py-2 text-gray-600">${thesis.title}</td>
+                    </tr>
+                `).join('');
+            };
+            
+            searchInput.addEventListener('input', render);
+            render(); 
+        }
+
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-target]');
+            const speed = 200;
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target');
+                        
+                        const updateCount = () => {
+                            const count = +counter.innerText;
+                            const inc = target / speed;
+
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + inc);
+                                setTimeout(updateCount, 10);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        updateCount();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        function createCitationsChart() {
+            const ctx = document.getElementById('citationsChart').getContext('2d');
+            const data = {
+                labels: ['Pre-2019', '2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [
+                    {
+                        type: 'bar',
+                        label: 'Citations per Period',
+                        data: [310, 661, 1500, 1500, 1500, 1000, 673],
+                        backgroundColor: 'rgba(224, 122, 95, 0.6)',
+                        borderColor: 'rgba(224, 122, 95, 1)',
+                        borderWidth: 1,
+                        yAxisID: 'y',
+                    },
+                    {
+                        type: 'line',
+                        label: 'Cumulative Citations',
+                        data: [310, 971, 2471, 3971, 5471, 6144], 
+                        fill: false,
+                        borderColor: '#3D405B',
+                        tension: 0.1,
+                        yAxisID: 'y1',
+                    }
+                ]
+            };
+            new Chart(ctx, {
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: { display: true, text: 'Citations per Period' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: { display: true, text: 'Cumulative Citations' },
+                            grid: { drawOnChartArea: false },
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        title: {
+                            display: true,
+                            text: 'Explosive Growth in Research Impact Since 2020'
+                        }
+                    }
+                }
+            });
+        }
+
+        function createResearchFocusChart() {
+            const ctx = document.getElementById('researchFocusChart').getContext('2d');
+            const data = {
+                labels: ['Decision Making', 'Fuzzy Sets', 'Aggregation Operators', 'Topology', 'Other'],
+                datasets: [{
+                    label: 'Research Focus',
+                    data: [70, 57, 41, 25, 15],
+                    backgroundColor: ['#8D5A4B', '#E07A5F', '#3D405B', '#F2CC8F', '#81B29A'],
+                    hoverOffset: 4
+                }]
+            };
+
+            const researchChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                        title: {
+                            display: false,
+                        }
+                    }
+                }
+            });
+            const legendContainer = document.getElementById('researchFocusLegend');
+            data.labels.forEach((label, index) => {
+                const color = data.datasets[0].backgroundColor[index];
+                const legendItem = `
+                    <div class="flex items-center">
+                        <span class="w-3 h-3 rounded-full mr-2" style="background-color: ${color};"></span>
+                        <span>${label}</span>
+                    </div>`;
+                legendContainer.innerHTML += legendItem;
+            });
+        }
+        
+        // Shared navigation setup
+        const mobileMenuButtonShared = document.getElementById('mobile-menu-button-shared');
+        const mobileMenuShared = document.getElementById('mobile-menu-shared');
+
+        if (mobileMenuButtonShared && mobileMenuShared) {
+            mobileMenuButtonShared.addEventListener('click', () => {
+                mobileMenuShared.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('#mobile-menu-shared a').forEach(link => {
+                link.addEventListener('click', () => mobileMenuShared.classList.add('hidden'));
+            });
+        }
+
+        // Highlight active link based on current page
+        const currentPath = window.location.pathname.split('/').pop();
+        document.querySelectorAll('#shared-navbar .nav-link, #mobile-menu-shared a').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('nav-active');
+            } else {
+                link.classList.remove('nav-active');
+            }
+        });
+
+        // Specific navigation for index.html's internal sections
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('#shared-navbar .nav-link[href^="#"]'); // Only internal links
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('nav-active');
+                }
+            });
+        });
+        
+        renderTimeline();
+        renderPublications();
+        renderTheses();
+        animateCounters();
+        createCitationsChart();
+        createResearchFocusChart();
+    });
+    </script>
+</body>
+</html>
